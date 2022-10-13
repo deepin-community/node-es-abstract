@@ -1,0 +1,65 @@
+{
+  "_from": "has-strict-mode@^1.0.0",
+  "_id": "has-strict-mode@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-UcNCHFNmh9DP4rRjGGFFWY2x0czPyrYKj6ZBoLxJ4ID3o7MOOFsHNnKnLe542NdnGsrl3WlKdtuhdWP2zEMkpQ==",
+  "_location": "/has-strict-mode",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "has-strict-mode@^1.0.0",
+    "name": "has-strict-mode",
+    "escapedName": "has-strict-mode",
+    "rawSpec": "^1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.0"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "https://registry.npmjs.org/has-strict-mode/-/has-strict-mode-1.0.0.tgz",
+  "_shasum": "7ffe1f74bbb108224086db2815e418d132a93fda",
+  "_spec": "has-strict-mode@^1.0.0",
+  "_where": "/home/xavier/dev/debian/src/pkg-js/packages/node-es-abstract",
+  "author": {
+    "name": "Jordan Harband",
+    "email": "ljharb@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/ljharb/has-strict-mode/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Does the current JS environment have strict mode? ES5+ should; but let's not assume.",
+  "devDependencies": {
+    "@ljharb/eslint-config": "^13.1.1",
+    "eslint": "^5.16.0",
+    "tape": "^4.11.0"
+  },
+  "homepage": "https://github.com/ljharb/has-strict-mode#readme",
+  "keywords": [
+    "strict",
+    "mode",
+    "strict",
+    "mode",
+    "javascript",
+    "es3",
+    "es5"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "has-strict-mode",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljharb/has-strict-mode.git"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "posttest": "npx aud",
+    "pretest": "npm run lint",
+    "test": "npm run tests-only",
+    "tests-only": "node test"
+  },
+  "version": "1.0.0"
+}

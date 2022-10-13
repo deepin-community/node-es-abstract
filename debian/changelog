@@ -1,0 +1,96 @@
+node-es-abstract (1.19.1+~cs16.20.21-1) unstable; urgency=medium
+
+  * Embed is-shared-array-buffer and is-weakref
+  * New upstream version 1.19.1+~cs16.20.21
+  * Embed array.prototype.filter and es-array-method-boxes-properly for test
+    only
+  * Update debian/nodejs/files
+  * Update copyright
+
+ -- Yadd <yadd@debian.org>  Mon, 11 Oct 2021 06:43:23 +0200
+
+node-es-abstract (1.18.6+~cs14.20.19+repack-1) unstable; urgency=medium
+
+  * Fix gbp.conf and repack
+
+ -- Yadd <yadd@debian.org>  Mon, 13 Sep 2021 19:09:04 +0200
+
+node-es-abstract (1.18.6+~cs14.20.19-1) unstable; urgency=medium
+
+  * Declare compliance with policy 4.6.0
+  * Embed components: get-symbol-description, internal-slot
+  * New upstream version 1.18.6+~cs14.20.19
+  * Add dependency to node-deep-equal
+
+ -- Yadd <yadd@debian.org>  Mon, 13 Sep 2021 18:19:00 +0200
+
+node-es-abstract (1.18.5+~cs12.20.16-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Yadd ]
+  * Fix GitHub tags regex
+
+  [ Ayoyimika Ajibade ]
+  * Removed Embedded packages
+  * Updated install-2020.patch
+  * Added provided packages
+  * embed unbox-primitive, es-value-fixtures
+  * New upstream version 1.18.5+~cs12.20.16
+  * Added files to install properly
+  * Ensure operations/getOps.js is executable
+  * Updated test Command
+
+ -- Ayoyimika Ajibade <ayoyimikaajibade@gmail.com>  Sun, 05 Sep 2021 18:50:28 +0000
+
+node-es-abstract (1.18.0~next~2+~cs13.20.17-1) unstable; urgency=medium
+
+  * Add ctype=nodejs to component(s)
+  * New upstream version 1.18.0~next~2+~cs13.20.17
+    Updates:
+    + es-abstract 1.18.0-next.2
+    + call-bind 1.0.2
+    + get-intrinsic 1.0.2
+    + is-negative-zero 2.0.1
+    + string.prototype.trimend 1.0.3
+  * Add patch to install operations/2020.js
+
+ -- Xavier Guimard <yadd@debian.org>  Mon, 25 Jan 2021 17:09:42 +0100
+
+node-es-abstract (1.18.0~next~1+~cs13.20.11-1) unstable; urgency=medium
+
+  * Declare compliance with policy 4.5.1
+  * Accept beta versions in debian/watch
+  * Embed call-bind get-intrinsic is-negative-zero
+  * New upstream version 1.18.0~next~1+~cs13.20.11
+  * Update copyright
+  * Update test dependencies
+
+ -- Xavier Guimard <yadd@debian.org>  Fri, 20 Nov 2020 17:11:19 +0100
+
+node-es-abstract (1.17.7+~cs9.20.10-1) unstable; urgency=medium
+
+  * Launch test only during autopkgtest to avoid circular dependencies
+  * New upstream version 1.17.7+~cs9.20.10
+    + Updates: object.assign 4.1.2
+
+ -- Xavier Guimard <yadd@debian.org>  Mon, 16 Nov 2020 05:59:08 +0100
+
+node-es-abstract (1.17.7+~cs9.20.8-1) unstable; urgency=medium
+
+  * Embed @types/es-abstract
+  * New upstream version 1.17.7+~cs9.20.8
+    Updates:
+     + string.prototype.trimend 1.0.2
+     + string.prototype.trimstart 1.0.2
+    Really: 1.17.7+~1.1.1+~1.1.1+~4.1.1+~1.0.2+~1.0.2+~1.17.1
+
+ -- Xavier Guimard <yadd@debian.org>  Sat, 24 Oct 2020 07:47:15 +0200
+
+node-es-abstract (1.17.7+~cs8.3.5-1) unstable; urgency=medium
+
+  [ Pirate Praveen, Paolo Greppi, Xavier Guimard ]
+  * Initial release (Closes: #887167)
+    Decoded checksum: 1.17.7+~1.1.1+~1.1.1+~4.1.1+~1.0.1+~1.0.1
+
+ -- Xavier Guimard <yadd@debian.org>  Mon, 05 Oct 2020 11:04:10 +0200

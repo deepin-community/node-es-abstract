@@ -1,0 +1,88 @@
+version=4
+opts=\
+dversionmangle=auto,\
+uversionmangle=s/-(.*)$/~$1/;s/([a-z])\./$1~/g,\
+filenamemangle=s/.*\/v?([\d\.-\w]+)\.tar\.gz/node-es-abstract-$1.tar.gz/ \
+ https://github.com/ljharb/es-abstract/tags .*/archive/.*/v?(\d[\d\.\w\-]+).tar.gz group
+
+opts=\
+ctype=nodejs,\
+component=objectassign,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-object.assign-$1.tar.gz/ \
+ https://github.com/ljharb/object.assign/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+ctype=nodejs,\
+component=stringprototypetrimend,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-String.prototype.trimEnd-$1.tar.gz/ \
+ https://github.com/es-shims/String.prototype.trimEnd/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+ctype=nodejs,\
+component=stringprototypetrimstart,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-String.prototype.trimStart-$1.tar.gz/ \
+ https://github.com/es-shims/String.prototype.trimStart/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
+
+# It is not recommended use npmregistry. Please investigate more.
+# Take a look at https://wiki.debian.org/debian/watch/
+opts="searchmode=plain,ctype=nodejs,component=types-es-abstract,pgpmode=none" \
+ https://registry.npmjs.org/@types/es-abstract https://registry.npmjs.org/@types/es-abstract/-/es-abstract-([\d\.]+)@ARCHIVE_EXT@ checksum
+
+opts=\
+ctype=nodejs,\
+component=is-negative-zero,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-is-negative-zero-$1.tar.gz/ \
+ https://github.com/ljharb/is-negative-zero/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=unbox-primitive,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-unbox-primitive-$1.tar.gz/ \
+ https://github.com/ljharb/unbox-primitive/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=es-value-fixtures,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-es-value-fixtures-$1.tar.gz/ \
+ https://github.com/ljharb/es-value-fixtures/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=make-async-function,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-make-async-function-$1.tar.gz/ \
+ https://github.com/ljharb/make-async-function/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=get-symbol-description,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-get-symbol-description-$1.tar.gz/ \
+ https://github.com/inspect-js/get-symbol-description/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=internal-slot,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-internal-slot-$1.tar.gz/ \
+ https://github.com/ljharb/internal-slot/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=is-shared-array-buffer,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-is-shared-array-buffer-$1.tar.gz/ \
+ https://github.com/inspect-js/is-shared-array-buffer/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=is-weakref,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-is-weakref-$1.tar.gz/ \
+ https://github.com/inspect-js/is-weakref/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
