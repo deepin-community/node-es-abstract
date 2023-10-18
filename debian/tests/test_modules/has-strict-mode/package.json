@@ -1,65 +1,54 @@
 {
-  "_from": "has-strict-mode@^1.0.0",
-  "_id": "has-strict-mode@1.0.0",
-  "_inBundle": false,
-  "_integrity": "sha512-UcNCHFNmh9DP4rRjGGFFWY2x0czPyrYKj6ZBoLxJ4ID3o7MOOFsHNnKnLe542NdnGsrl3WlKdtuhdWP2zEMkpQ==",
-  "_location": "/has-strict-mode",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "has-strict-mode@^1.0.0",
-    "name": "has-strict-mode",
-    "escapedName": "has-strict-mode",
-    "rawSpec": "^1.0.0",
-    "saveSpec": null,
-    "fetchSpec": "^1.0.0"
-  },
-  "_requiredBy": [
-    "#DEV:/"
-  ],
-  "_resolved": "https://registry.npmjs.org/has-strict-mode/-/has-strict-mode-1.0.0.tgz",
-  "_shasum": "7ffe1f74bbb108224086db2815e418d132a93fda",
-  "_spec": "has-strict-mode@^1.0.0",
-  "_where": "/home/xavier/dev/debian/src/pkg-js/packages/node-es-abstract",
-  "author": {
-    "name": "Jordan Harband",
-    "email": "ljharb@gmail.com"
-  },
-  "bugs": {
-    "url": "https://github.com/ljharb/has-strict-mode/issues"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
-  "description": "Does the current JS environment have strict mode? ES5+ should; but let's not assume.",
-  "devDependencies": {
-    "@ljharb/eslint-config": "^13.1.1",
-    "eslint": "^5.16.0",
-    "tape": "^4.11.0"
-  },
-  "homepage": "https://github.com/ljharb/has-strict-mode#readme",
-  "keywords": [
-    "strict",
-    "mode",
-    "strict",
-    "mode",
-    "javascript",
-    "es3",
-    "es5"
-  ],
-  "license": "MIT",
-  "main": "index.js",
-  "name": "has-strict-mode",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ljharb/has-strict-mode.git"
-  },
-  "scripts": {
-    "lint": "eslint .",
-    "posttest": "npx aud",
-    "pretest": "npm run lint",
-    "test": "npm run tests-only",
-    "tests-only": "node test"
-  },
-  "version": "1.0.0"
+	"name": "has-strict-mode",
+	"version": "1.0.1",
+	"description": "Does the current JS environment have strict mode? ES5+ should; but let's not assume.",
+	"main": "index.js",
+	"scripts": {
+		"prepublish": "safe-publish-latest",
+		"pretest": "npm run lint",
+		"lint": "eslint --ext=js,mjs .",
+		"tests-only": "nyc tape 'test/**/*.js'",
+		"test": "npm run tests-only",
+		"posttest": "aud --production",
+		"version": "auto-changelog && git add CHANGELOG.md",
+		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/inspect-js/has-strict-mode.git"
+	},
+	"keywords": [
+		"strict mode",
+		"strict",
+		"mode",
+		"javascript",
+		"es3",
+		"es5"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"funding": {
+		"url": "https://github.com/sponsors/ljharb"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/inspect-js/has-strict-mode/issues"
+	},
+	"homepage": "https://github.com/inspect-js/has-strict-mode#readme",
+	"devDependencies": {
+		"@ljharb/eslint-config": "^17.3.0",
+		"aud": "^1.1.3",
+		"auto-changelog": "^2.2.1",
+		"eslint": "^7.15.0",
+		"nyc": "^10.3.2",
+		"safe-publish-latest": "^1.1.4",
+		"tape": "^5.0.1"
+	},
+	"auto-changelog": {
+		"output": "CHANGELOG.md",
+		"template": "keepachangelog",
+		"unreleased": false,
+		"commitLimit": false,
+		"backfillLimit": false,
+		"hideCredit": true
+	}
 }

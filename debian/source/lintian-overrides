@@ -1,0 +1,13 @@
+# Same author
+add-component-copyright function-prototype-name *
+add-component-copyright functions-have-names *
+add-component-copyright es-shim-unscopables *
+add-component-copyright es-value-fixtures *
+add-component-copyright get-symbol-description *
+add-component-copyright has-property-descriptors *
+add-component-copyright internal-slot *
+add-component-copyright intl-fallback-symbol *
+add-component-copyright is-negative-zero *
+add-component-copyright make-async-function *
+add-component-copyright objectassign *
+add-component-copyright unbox-primitive *
