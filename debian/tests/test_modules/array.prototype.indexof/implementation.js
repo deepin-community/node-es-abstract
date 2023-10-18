@@ -1,12 +1,12 @@
 'use strict';
 
-var Get = require('es-abstract/2019/Get');
-var HasProperty = require('es-abstract/2019/HasProperty');
-var ToInteger = require('es-abstract/2019/ToInteger');
-var ToLength = require('es-abstract/2019/ToLength');
-var ToObject = require('es-abstract/2019/ToObject');
-var ToString = require('es-abstract/2019/ToString');
-var callBound = require('es-abstract/helpers/callBound');
+var Get = require('es-abstract/2021/Get');
+var HasProperty = require('es-abstract/2021/HasProperty');
+var LengthOfArrayLike = require('es-abstract/2021/LengthOfArrayLike');
+var ToIntegerOrInfinity = require('es-abstract/2021/ToIntegerOrInfinity');
+var ToObject = require('es-abstract/2021/ToObject');
+var ToString = require('es-abstract/2021/ToString');
+var callBound = require('call-bind/callBound');
 var isNegativeZero = require('is-negative-zero');
 var isString = require('is-string');
 
@@ -19,7 +19,7 @@ var $split = callBound('String.prototype.split');
 module.exports = function indexOf(searchElement) {
 	var OO = ToObject(this);
 	var O = splitString && isString(OO) ? $split(OO, '') : OO;
-	var len = ToLength(Get(O, 'length'));
+	var len = LengthOfArrayLike(O, 'length');
 
 	if (len === 0) {
 		return -1;
@@ -29,7 +29,7 @@ module.exports = function indexOf(searchElement) {
 	if (arguments.length > 1) {
 		fromIndex = arguments[1];
 	}
-	var n = ToInteger(fromIndex);
+	var n = ToIntegerOrInfinity(fromIndex);
 	if (n >= len) {
 		return -1;
 	}

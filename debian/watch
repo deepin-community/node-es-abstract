@@ -9,21 +9,21 @@ opts=\
 ctype=nodejs,\
 component=objectassign,\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-object.assign-$1.tar.gz/ \
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-object.assign-$1/ \
  https://github.com/ljharb/object.assign/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
 
 opts=\
 ctype=nodejs,\
 component=stringprototypetrimend,\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-String.prototype.trimEnd-$1.tar.gz/ \
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-String.prototype.trimEnd-$1/ \
  https://github.com/es-shims/String.prototype.trimEnd/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
 
 opts=\
 ctype=nodejs,\
 component=stringprototypetrimstart,\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-String.prototype.trimStart-$1.tar.gz/ \
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-String.prototype.trimStart-$1/ \
  https://github.com/es-shims/String.prototype.trimStart/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
 
 # It is not recommended use npmregistry. Please investigate more.
@@ -35,54 +35,110 @@ opts=\
 ctype=nodejs,\
 component=is-negative-zero,\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-is-negative-zero-$1.tar.gz/ \
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-is-negative-zero-$1/ \
  https://github.com/ljharb/is-negative-zero/tags .*/archive/.*/v?([\d\.]+).tar.gz checksum
 
 opts=\
 component=unbox-primitive,\
 ctype=nodejs,\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-unbox-primitive-$1.tar.gz/ \
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-unbox-primitive-$1/ \
  https://github.com/ljharb/unbox-primitive/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
 
 opts=\
 component=es-value-fixtures,\
 ctype=nodejs,\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-es-value-fixtures-$1.tar.gz/ \
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-es-value-fixtures-$1/ \
  https://github.com/ljharb/es-value-fixtures/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
 
 opts=\
 component=make-async-function,\
 ctype=nodejs,\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-make-async-function-$1.tar.gz/ \
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-make-async-function-$1/ \
  https://github.com/ljharb/make-async-function/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
 
 opts=\
 component=get-symbol-description,\
 ctype=nodejs,\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-get-symbol-description-$1.tar.gz/ \
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-get-symbol-description-$1/ \
  https://github.com/inspect-js/get-symbol-description/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
 
 opts=\
 component=internal-slot,\
 ctype=nodejs,\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-internal-slot-$1.tar.gz/ \
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-internal-slot-$1/ \
  https://github.com/ljharb/internal-slot/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
 
 opts=\
 component=is-shared-array-buffer,\
 ctype=nodejs,\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-is-shared-array-buffer-$1.tar.gz/ \
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-is-shared-array-buffer-$1/ \
  https://github.com/inspect-js/is-shared-array-buffer/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
 
 opts=\
 component=is-weakref,\
 ctype=nodejs,\
 dversionmangle=auto,\
-filenamemangle=s/.*\/v?([\d\.-]+)\.tar\.gz/node-is-weakref-$1.tar.gz/ \
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-is-weakref-$1/ \
  https://github.com/inspect-js/is-weakref/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=function-prototype-name,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-Function.prototype.name-$1/ \
+ https://github.com/es-shims/Function.prototype.name/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=functions-have-names,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-functions-have-names-$1/ \
+ https://github.com/inspect-js/functions-have-names/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=has-property-descriptors,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-has-property-descriptors-$1/ \
+ https://github.com/inspect-js/has-property-descriptors/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=array-prototype-find,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-Array.prototype.find-$1/ \
+ https://github.com/paulmillr/Array.prototype.find/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=es-shim-unscopables,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-es-shim-unscopables-$1/ \
+ https://github.com/ljharb/es-shim-unscopables/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=intl-fallback-symbol,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-intl-fallback-symbol-$1/ \
+ https://github.com/ljharb/intl-fallback-symbol/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=safe-regex-test,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-safe-regex-test-$1/ \
+ https://github.com/ljharb/safe-regex-test/tags .*/archive.*/v?([\d\.]+).tar.gz checksum
+
+opts=\
+component=foreach,\
+ctype=nodejs,\
+dversionmangle=auto,\
+filenamemangle=s/.*?(\d[\d\.-]*@ARCHIVE_EXT@)/node-foreach-$1/ \
+ https://github.com/manuelstofer/foreach/tags .*/archive.*/v?([\d\.]+).tar.gz checksum

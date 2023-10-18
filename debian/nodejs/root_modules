@@ -1,6 +1,12 @@
+array-prototype-find
+es-shim-unscopables
 es-value-fixtures
+function-prototype-name
+functions-have-names
 get-symbol-description
+has-property-descriptors
 internal-slot
+intl-fallback-symbol
 make-async-function
 types-es-abstract
 unbox-primitive

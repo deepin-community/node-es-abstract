@@ -1,1 +1,1 @@
-node test
+NODE_PATH=`pwd`/node_modules tape test/index.js

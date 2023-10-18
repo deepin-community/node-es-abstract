@@ -14,19 +14,26 @@ Source: https://github.com/ljharb/es-abstract#readme
  https://github.com/ljharb/internal-slot/tags
  https://github.com/inspect-js/is-shared-array-buffer/tags
  https://github.com/inspect-js/is-weakref/tags
+ https://github.com/es-shims/Function.prototype.name/tags
+ https://github.com/inspect-js/functions-have-names/tags
+ https://github.com/inspect-js/has-property-descriptors/tags
+ https://github.com/paulmillr/Array.prototype.find/tags
+ https://github.com/ljharb/es-shim-unscopables/tags
+ https://github.com/ljharb/intl-fallback-symbol/tags
+ https://github.com/ljharb/safe-regex-test/tags
+ https://github.com/manuelstofer/foreach/tags
 
 Files: *
-Copyright: 2013-2020 Jordan Harband <ljharb@gmail.com>
+Copyright: 2013-2022 Jordan Harband <ljharb@gmail.com>
 License: Expat
 
-Files: is-shared-array-buffer/*
- is-weakref/*
-Copyright: 2020-2021 Inspect JS
+Files: array-prototype-find/*
+Copyright: 2019 Paul Miller <https://paulmillr.com>
 License: Expat
 
 Files: debian/*
 Copyright: 2018 Pirate Praveen <praveen@debian.org>
- 2020 Yadd <yadd@debian.org>
+ 2020-2022 Yadd <yadd@debian.org>
 License: Expat
 
 Files: debian/tests/test_modules/*
@@ -37,8 +44,15 @@ Files: debian/tests/test_modules/array.prototype.indexof/*
 Copyright: 2020 ECMAScript Shims
 License: Expat
 
-Files: debian/tests/test_modules/foreach/*
+Files: foreach/*
 Copyright: 2013 Manuel Stofer
+License: Expat
+
+Files: get-symbol-description/*
+ has-property-descriptors/*
+ is-shared-array-buffer/*
+ is-weakref/*
+Copyright: 2020-2021 Inspect JS
 License: Expat
 
 Files: stringprototypetrimend/*

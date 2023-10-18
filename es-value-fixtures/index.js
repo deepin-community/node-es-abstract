@@ -7,6 +7,7 @@ var hasBigInts = require('has-bigints')();
 var arrowFunctions = require('make-arrow-function').list();
 var generatorFunctions = require('make-generator-function')();
 var asyncFunctions = require('make-async-function').list();
+var IntlFallbackSymbol = require('intl-fallback-symbol');
 
 var coercibleObject = { valueOf: function () { return 3; }, toString: function () { return 42; } };
 var coercibleFnObject = {
@@ -30,7 +31,26 @@ var infinities = [Infinity, -Infinity];
 var numbers = zeroes.concat([42], infinities, nonIntegerNumbers);
 var strings = ['', 'foo', 'a\uD83D\uDCA9c'];
 var booleans = [true, false];
-var symbols = hasSymbols ? [Symbol.iterator, Symbol('foo')] : [];
+var symbols = hasSymbols ? [].concat(
+	Symbol.iterator,
+	Symbol('foo'),
+	IntlFallbackSymbol || []
+) : [];
+var wellKnownSymbols = hasSymbols ? [].concat(
+	Symbol.iterator || [],
+	Symbol.toStringTag || [],
+	Symbol.hasInstance || [],
+	Symbol.isConcatSpreadable || [],
+	Symbol.asyncIterator || [],
+	Symbol.match || [],
+	Symbol.matchAll || [],
+	Symbol.replace || [],
+	Symbol.search || [],
+	Symbol.species || [],
+	Symbol.split || [],
+	Symbol.toPrimitive || [],
+	Symbol.unscopables || []
+) : [];
 var bigints = hasBigInts ? [BigInt(42), BigInt(0)] : [];
 var nonSymbolPrimitives = [].concat(nullPrimitives, booleans, strings, numbers, bigints);
 var nonNumberPrimitives = [].concat(nullPrimitives, booleans, strings, symbols);
@@ -106,6 +126,7 @@ module.exports = {
 	propertyKeys: propertyKeys,
 	strings: strings,
 	symbols: symbols,
+	wellKnownSymbols: wellKnownSymbols,
 	timestamps: timestamps,
 	toStringOnlyObject: toStringOnlyObject,
 	truthies: truthies,
@@ -136,6 +157,9 @@ module.exports = {
 	},
 	genericDescriptor: function () {
 		return descriptors.configurable(descriptors.nonEnumerable());
+	},
+	assignedDescriptor: function (value) {
+		return descriptors.configurable(descriptors.enumerable(descriptors.writable({ '[[Value]]': value })));
 	},
 	descriptors: descriptors
 };

@@ -16,6 +16,6 @@ Last-Update: 2021-09-04
 +@@ -14,3 +14,4 @@
 + # dev scripts
 + operations/*.js
-+- !operations/201*.js
++-!operations/201*.js
 +-!operations/202*.js
 ++!operations/20*.js
